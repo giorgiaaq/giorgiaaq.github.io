@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methodology</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=Rakkas&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .left-aligned-list {
+            text-align: left;
+            list-style-position: inside;
+        }
+        ol.left-aligned-list {
+            padding-left: 20px;
+        }
+
+        .info-box {
+            border: 2px solid #333; /* bordo nero */
+            padding: 15px;
+            background-color: #f9f9f9; /* colore di sfondo chiaro */
+            margin: 20px 0; /* margine verticale */
+            border-radius: 8px; /* bordi arrotondati */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* ombreggiatura leggera */
+        }
+
+        .info-box h1 {
+            font-size: 24px;
+        }
+
+        .info-box h2 {
+            font-size: 20px;
+            margin-top: 0;
+        }
+
+        .info-box p {
+            color: #555; /* colore del testo del paragrafo */
+        }
+
+        .collapsible {
+            background-color: #6F4F28; /* colore marrone scuro */
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .collapsible .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .active, .collapsible:hover {
+            background-color: #6F4F28; /* colore marrone chiaro */
+        }
+
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f9f9f9;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="home-arrow"><i class="fas fa-home"></i></a>
+        <h1>Methodology</h1>
+        <div class="dropdown">
+            <button class="dropbtn">Menu</button>
+            <div class="dropdown-content">
+                <a href="project.html">The Project</a>
+                <a href="methodology.html">Methodology</a>
+                <a href="process.html">Process</a>
+                <a href="conclusion.html">Conclusion</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h2>Research Methodology</h2>
+        <p>The methodology section describes the approach and processes used to investigate the Italian architectural heritage, focusing on the contributions of Frederick II.<br> <br>The following steps outline the key phases of the research (click on the highlighted sections to know more):</p>
+        <ol class="left-aligned-list">
+            <li>Exploration of the ArCo ontologies and knowledge graph through the <a href="#section1" style="color:rosybrown;">ArCo SPARQL Query Editor </a>;</li>
+            <li>Usage of <a href="#section2" style="color: rosybrown;">SPARQL query language</a>;</li>
+            <li>Usage of <a href="#section3" style="color: rosybrown;">LLMs</a> to retrieve pieces of information to enrich the KG and <a href="#section5" style="color:rosybrown;">prompting techniques</a> to generate the best responses;</li>
+            <li>Usage of <a href="#section4" style="color: rosybrown;">GitHub</a> to publish the website.</li>
+        </ol>
+        <p>The methodological framework ensures a rigorous and systematic approach to data enrichment, contributing to the preservation and accessibility of Italy's cultural heritage.</p>
+        <br> 
+        <!-- Inserisci l'immagine sotto il testo -->
+            <img src="CastelloUrsino.jpg" alt="Castello Ursino" style="width: 600px; height: auto; margin-top: 10px;">
+            <figcaption>Castello Ursino - Catania (CT), Sicily.</figcaption>
+        <br>
+        <!-- Inizio del riquadro -->
+        <div class="info-box">
+            <h1 id="section1">1</h1>
+            <h2>ArCo SPARQL Query Editor</h2>
+            <p>The ArCo SPARQL Query Editor is a tool used for querying the ArCo Knowledge Graph. The editor allows users to write and execute SPARQL queries and therefore access and explore the dataset. Querying the editor also provides the opportunity to explore relationships between different entities: such relationships are specified by the ArCo ontologies.<br><p><a href="https://dati.cultura.gov.it/sparql" target="_blank" style="color: rosybrown;">Visit ArCo SPARQL Query Editor</a>.</p></p>
+        </div>
+        <!-- Fine del riquadro -->
+<br><br>
+        <!-- Inizio del riquadro -->
+      <div class="info-box">
+    <h1 id="section2">2</h1>
+    <h2>SPARQL Query Language</h2>
+    <p>SPARQL (SPARQL Protocol and RDF Query Language) is a query language and protocol for querying and manipulating data stored in Resource Description Framework (RDF) format.</p>
+    
+    <!-- Sezione a scomparsa 1 -->
+    <div class="collapsible-section">
+        <button class="collapsible">RDF<i class="fas fa-chevron-down arrow"></i></button>
+        <div class="content">
+            <p>The Resource Description Framework (RDF) is a standard model for representing structured information about resources on the web. Developed by the World Wide Web Consortium (W3C), RDF provides a framework to describe and interlink data in a way that is both machine-readable and interoperable across different systems. RDF data is represented as triples, each triple consists of three components:</p>
+            <ol class="left-aligned-list">
+                <li>Subject: The entity or resource being described.</li>
+                <li>Predicate: The property or relationship between the subject and the object.</li>
+                <li>Object: The value or another resource that is related to the subject by the predicate.</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Sezione a scomparsa 2 -->
+    <div class="collapsible-section">
+        <button class="collapsible">SPARQL Basic Syntax<i class="fas fa-chevron-down arrow"></i></button>
+        <div class="content">
+            <p>SPARQL queries generally consist of the following parts:</p>
+            <ol class="left-aligned-list">
+                <li><b>PREFIX:</b> Defines shorthand prefixes for long URIs to simplify the query.</li>
+                <li><b>SELECT:</b> Specifies the variables to return in the query result.</li>
+                <li><b>WHERE:</b> Contains the triple patterns that the query matches against the RDF data.</li>
+                <li><b>FILTER:</b> Applies conditions to restrict the results returned.</li>
+                <li><b>ORDER BY:</b> Sorts the results based on one or more variables.</li>
+                <li><b>LIMIT:</b> Restricts the number of results returned.</li>
+                <li><b>UNION:</b> Considers two or more patterns as valid.</li>
+                <li><b>REGEX:</b> Applies regular expressions matching to filter query results.</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+        <!-- Fine del riquadro -->
+        </div>
+<br><br>
+    <!-- Inizio del riquadro -->
+        <div class="info-box">
+    <h1 id="section3">3</h1>
+    <h2>Large Language Models</h2>
+    <p>Large Language Models (LLMs) are a class of artificial intelligence models designed to understand, generate, and manipulate human language. These models are typically based on deep learning techniques and are trained on vast amounts of text data.<br><u><b>LLMs used for this project:</b></u></p>
+    
+    <!-- Inizio delle tre colonne -->
+    <div class="three-columns">
+        <div class="column">
+            <h2><a href="https://chatgpt.com/" target="_blank"style="color: rosybrown; text-decoration: none;"><u>ChatGPT</u></a></h2>
+            <p>ChatGPT is a conversational AI model developed by OpenAI, based on the GPT (Generative Pretrained Transformer) architecture. It can understand and generate human-like text. The model has been trained on diverse text data, enabling it to hold conversations, generate content, and assist with various tasks.</p>
+             <!-- Inserisci l'immagine sotto il testo -->
+            <img src="ChatGPT.jpg" alt="ChatGPT" style="width: 100px; height: auto; margin-top: 10px;">
+        </div>
+        <div class="column">
+            <h2><a href="https://www.llama2.ai/" target="_blank"style="color: rosybrown; text-decoration: none;"><u>Llama</u></a></h2>
+            <p>LLaMA is a family of large language models developed by Meta (formerly Facebook). It is designed to be more efficient and accessible than other large models, focusing on providing high performance while using fewer computational resources. LLaMA models are trained on large datasets and are open-sourced.</p>
+            <!-- Inserisci l'immagine sotto il testo -->
+            <img src="Llama.jpg" alt="Llama" style="width: 150px; height: auto; margin-top: 10px;">
+        </div>
+        <div class="column">
+           <h2><a href="https://gemini.google.com/app" target="_blank"style="color: rosybrown; text-decoration: none;"><u>Gemini</u></a></h2>
+            <p>Gemini is a suite of AI models developed by Google DeepMind, designed to integrate the capabilities of large language models with more advanced reasoning and problem-solving abilities. It combines cutting-edge techniques to enhance the model's ability to understand and generate complex, context-aware responses across various domains.</p>
+            <!-- Inserisci l'immagine sotto il testo -->
+            <img src="Gemini.jpg" alt="Gemini" style="width: 150px; height: auto; margin-top: 10px;">
+        </div>
+    </div>
+    <!-- Fine delle tre colonne -->
+    <br>
+    <h2 id="section5">Prompting techniques</h2>
+    <p>Prompting techniques are methods used to elicit specific responses or behaviors from AI models, particularly language models. These techniques are crucial for guiding the AI to produce relevant and accurate outputs based on the provided inputs.<br>Some examples of the techniques used for the project:
+ <ul class="left-aligned-list">
+        <li><b><span style="font-size: 20px;">Zero-shot prompting</span></b>: Asking the model to perform a task without providing any specific examples or context. It relies on the model's general training to generate a response.</li>
+        <li><b><span style="font-size: 20px;">Few-shot prompting</span></b>: Providing a few examples or context to guide the AI's responses. This helps the model understand the format or type of answer expected.</li>
+        <li><b><span style="font-size: 20px;">Multimodal Chain-Of-Thought</span></b>: Integrating multiple types of data (text, images, audio) to enhance reasoning.</li>
+    </ul>
+    </p>
+</div>
+
+        <!-- Fine del riquadro -->
+        <br><br>
+<!-- Inizio del riquadro -->
+        <div class="info-box">
+            <h1 id="section4">4</h1>
+            <h2>GitHub</h2>
+            <p>GitHub is a web platform for managing and collaborating on code using Git. It allows developers to store their projects in repositories, track changes, and work on different parts of a project through branches. Key features include pull requests for reviewing and merging changes, issue tracking for managing tasks and bugs, and GitHub Actions for automating tasks like testing and deployment. GitHub supports both public and private projects.</p>
+             <!-- Inserisci l'immagine sotto il testo -->
+             <a href="https://github.com/" target="_blank">
+            <img src="GitHub.jpg" alt="GitHub" style="width: 500px; height: auto; margin-top: 10px;"></a>
+            <P>Click on the image to visit GitHub <i class="fas fa-arrow-up"></i></P>
+        </div>
+        <!-- Fine del riquadro -->
+    </main>
+    <footer>
+        <p></p>
+    </footer>
+    <div class="footer">
+        <p>Methodology | Giorgia Aquilia and Antonella Galasso</p>
+        <br>
+       <p>Click the link below to download the PDF file of the project:</p>
+        <!-- Link for downloading the PDF without default link styles -->
+        <a href="ITS Project - Aquilia, Galasso.pdf" download class="download-link"><i class="fas fa-download"></i> ITS Project - Aquilia, Galasso PDF</a>
+    </div>
+
+    <!-- Script per la sezione a scomparsa -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var coll = document.getElementsByClassName("collapsible");
+            for (var i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    var arrow = this.getElementsByClassName("arrow")[0];
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                        arrow.style.transform = "rotate(0deg)";
+                    } else {
+                        content.style.display = "block";
+                        arrow.style.transform = "rotate(180deg)";
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

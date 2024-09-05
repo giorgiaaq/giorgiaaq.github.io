@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=Rakkas&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="home-arrow"><i class="fas fa-home"></i></a>
+        <h1>The Project</h1>
+        <div class="dropdown">
+            <button class="dropbtn">Menu</button>
+            <div class="dropdown-content">
+                <a href="project.html">The Project</a>
+                <a href="methodology.html">Methodology</a>
+                <a href="process.html">Process</a>
+                <a href="conclusion.html">Conclusion</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h2>Overview</h2>
+        <p>The aim of this project is to investigate the Italian architectural heritage. <br>The focus is on the figure of Frederick II, King of Sicily from 1198, King of Germany from 1212, King of Italy and Holy Roman Emperor from 1220 and King of Jerusalem from 1225. Frederick II built castles through the Holy Roman Empire, including Italy.
+            <br>The main goal of the project is to create new RDF triples regarding the ArCo Ontology to enrich the ArCo Knowledge Graph. 
+        </p>
+        <div class="right-box">
+            <div class="knight-icon-container">
+                <i class="fas fa-chess-knight knight-icon"></i> <!-- Icona del cavaliere -->
+            </div>
+            <div class="columns-container">
+                <div class="column">
+                    <h2>What is ArCo</h2>
+                    <p>ArCo is the knowledge Graph of the Italian Cultural Heritage. It provides a structured and interconnected representation of Italy's vast cultural assets, including monuments, historical sites, and artifacts. By leveraging RDF (Resource Description Framework) triples and ontologies, ArCo enables the enrichment and querying of cultural heritage data, facilitating research, preservation, and public access to Italy's rich cultural history. <br> ArCo consists of 13 vocabularies describing the cultural heritage domain and data from the General Catalogue of the Italian Ministry of Cultural Heritage (MiC) published as RDF.<br> <br> <u><a href="http://wit.istc.cnr.it/arco/?lang=en" target="_blank">Visit ArCo</a></u></p>
+                </div>
+                <div class="column">
+                    <h2>How to enrich ArCo</h2>
+                    <p>It is essential to identify, collect and map new data sources. The mapped data is converted into RDF triples, building block of a knowledge graph, consisting of subject-predicate-object expressions. These new triples are incorporated into the existing ArCo knowledge graph. </p>
+                    <img src="ArCo.jpg" alt="ArCo knowledge graph" style="max-width: 100%;">
+                </div>
+            </div>
+        </div>
+        <!-- New text outside the main content box -->
+        <p>This projects builds new triples regarding the ArCo Ontology to enrich the ArCo knowledge graph with regard to:</p>
+        <ul class="left-aligned-list">
+            <li>Depiction;</li>
+            <li>Layout;</li>
+            <li>Construction elements;</li>
+            <li>Commissioner;</li>
+            <li>Event or situation in time.</li>
+        </ul>
+        <p>The fundamental class of the ArCo ontology explored in this project is the <u><a href="https://dati.beniculturali.it/lodview-arco-onto/ontology/arco/ArchitecturalOrLandscapeHeritage.html" target="_blank">Architectural or Landscape Heritage class</a></u>.</p>
+        <!-- Adding the new image -->
+        <img src="ArchitecturalOrLandscapeHeritage.jpg" alt="ArchitecturalOrLandscapeHeritage" style="max-width: 100%; margin-top: 20px;">
+    </main>
+    <footer>
+        <p></p>
+    </footer>
+    <div class="footer">
+        <p>The project | Giorgia Aquilia and Antonella Galasso</p>
+        <br>
+        <p>Click the link below to download the PDF file of the project:</p>
+        <!-- Link for downloading the PDF without default link styles -->
+        <a href="ITS Project - Aquilia, Galasso.pdf" download class="download-link"><i class="fas fa-download"></i> ITS Project - Aquilia, Galasso PDF</a>
+    </div>
+</body>
+</html>

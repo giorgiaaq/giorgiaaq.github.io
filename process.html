@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Process</title>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=Rakkas&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .left-aligned-list {
+            text-align: left;
+            list-style-position: inside;
+        }
+        ol.left-aligned-list {
+            padding-left: 20px;
+        }
+
+        .info-box {
+            border: 2px solid #333; /* bordo nero */
+            padding: 15px;
+            background-color: #f9f9f9; /* colore di sfondo chiaro */
+            margin: 20px 0; /* margine verticale */
+            border-radius: 8px; /* bordi arrotondati */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* ombreggiatura leggera */
+        }
+
+        .info-box h1 {
+            font-size: 24px;
+        }
+
+        .info-box h2 {
+            font-size: 20px;
+            margin-top: 0;
+        }
+
+        .info-box p {
+            color: #555; /* colore del testo del paragrafo */
+        }
+
+        .collapsible {
+            background-color: #6F4F28; /* colore marrone scuro */
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .collapsible .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .active, .collapsible:hover {
+            background-color: #6F4F28; /* colore marrone chiaro */
+        }
+
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f9f9f9;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        /* New CSS for the image */
+        .image-container {
+            text-align: center; /* Center the image */
+            margin-top: 20px; /* Space between columns and image */
+        }
+
+        .image-container img {
+            max-width: 100%; /* Make the image responsive */
+            height: auto; /* Maintain aspect ratio */
+            border: 1px solid #ddd; /* Optional: border around the image */
+            border-radius: 8px; /* Optional: rounded corners for the image */
+        }
+        .right-box {
+            max-width: 100%; /* Imposta una larghezza massima per mantenere la coerenza */
+            margin: auto; /* Centra la box nella pagina */
+            padding: 20px; /* Aggiunge del padding per migliorare la spaziatura interna */
+            box-sizing: border-box; /* Include padding e bordo nella larghezza totale */
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="home-arrow"><i class="fas fa-home"></i></a>
+        <h1>The Process</h1>
+        <div class="dropdown">
+            <button class="dropbtn">Menu</button>
+            <div class="dropdown-content">
+                <a href="project.html">The Project</a>
+                <a href="methodology.html">Methodology</a>
+                <a href="process.html">Process</a>
+                <a href="conclusion.html">Conclusion</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <p>This project starts with two general queries to help identify the main topic: Frederick II.</p>
+        <div class="right-box">
+            <div class="knight-icon-container">
+                <i class="fas fa-chess-knight knight-icon"></i> <!-- Icona del cavaliere -->
+            </div>
+            <div class="columns-container">
+                <div class="column">
+    <p class="query-box"><strong>
+        PREFIX arco: &lt;https://w3id.org/arco/ontology/arco/&gt; <br> 
+        PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; <br>
+        ASK<br>
+        WHERE {<br>
+        ?person rdfs:label "Federico II di Svevia" .<br>
+        }<br>
+    </strong></p>
+    <!-- Sezione a scomparsa 1 -->
+    <div class="collapsible-section">
+        <button class="collapsible">Explanation<i class="fas fa-chevron-down arrow"></i></button>
+        <div class="content">
+            <p>The prefixes are shorthand to make queries easier to read and write. More specifically, the rdfs prefix is used to refer to properties from the RDF Schema vocabulary.<br>
+            The ASK keyword indicates that the query returns "True" or "False" values, rather than actual data: it checks whether a condition exists in the dataset.<br></p>
+        </div>
+    </div>
+    <br>
+    <p>The query checks whether any entity (?person) exists in the dataset that has an rdfs:label of "Federico II di Svevia".</p>
+</div>
+
+                <div class="column">
+                    <p class="query-box"><strong>
+                        PREFIX arco: &lt;https://w3id.org/arco/ontology/arco/&gt; <br> 
+                        PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; <br>
+                        SELECT ?s<br>
+                        WHERE {<br>
+                        ?s rdfs:label "Federico II di Svevia" .<br>
+                        }<br>
+                    </strong></p>
+                    <!-- Sezione a scomparsa 2 -->
+                    <div class="collapsible-section">
+                        <button class="collapsible">Explanation<i class="fas fa-chevron-down arrow"></i></button>
+                        <div class="content">
+                            <p>
+                            The SELECT keyword specifies which variables to return in the query results.<br> ?s is a variable that in RDF triples represents the subject.<br>The WHERE clause contains the pattern that the query will search for in the RDF data.</p>
+                        </div>
+                    </div>
+                    <br>
+                    <p>The query searches the RDF dataset for any resource (?s) that has an rdfs:label with the exact value "Federico II di Svevia".</p>
+                </div>
+            </div>
+            <!-- Image Container -->
+            <br><br>
+            <p>The first query returned a TRUE result, meaning that Frederick II exists as an entity; the second query rescued the IRI of Frederick II: <a href="https://w3id.org/arco/resource/Agent/46dcc52443cd7818dc4c2adc90dee902" target="_blank">https://w3id.org/arco/resource/Agent/46dcc52443cd7818dc4c2adc90dee902</a>
+</p>
+            <div class="image-container">
+                <img src="IRI FEDERICO.jpg" alt="Iri Federico II di Svevia">
+            </div>
+        </div>
+        <br> <br>
+       <div class="right-box">
+    <div class="knight-icon-container">
+        <i class="fas fa-crown knight-icon"></i> 
+        <!-- Icona della corona -->
+    </div>
+                <p>The Agent “Federico II di Svevia” is not associated with any depiction. Therefore, a SPARQL query is used to research visual documentation about the Emperor:<p><br><p class="query-box">PREFIX arco: &lt;https://w3id.org/arco/ontology/arco/&gt;<br> PREFIX a-cd: &lt;https://w3id.org/arco/ontology/context-description/&gt; <br>PREFIX agent: &lt;https://w3id.org/arco/resource/Agent/&gt; PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; <br>
+SELECT DISTINCT ?cp <br>
+WHERE { <br>
+?cp a arco:HistoricOrArtisticProperty ; <br>
+rdfs:label ?l . <br>
+FILTER(REGEX(?l, "Ritratto di Federico II di Svevia","i")) <br>}
+</p>
+<!-- Sezione a scomparsa 1 -->
+                    <div class="collapsible-section">
+                        <button class="collapsible">Explanation<i class="fas fa-chevron-down arrow"></i></button>
+                        <div class="content">
+                            <p>The query begins by defining several prefixes that make the query more readable. The arco: prefix is used for referencing the ARCO ontology, which focuses on cultural heritage information. The a-cd: prefix relates to the ARCO Context Description ontology, which provides additional context about the entities. The agent: prefix refers to agents within the ARCO data, while the rdfs: prefix is standard for RDF Schema properties.<br><br>The core of the query is the SELECT DISTINCT ?cp statement, which instructs the query to return unique results for the variable ?cp. This variable represents the resources that the query is interested in.<br><br>The WHERE clause specifies the conditions for the query. It searches for entities (?cp) that are categorized as arco:HistoricOrArtisticProperty, meaning they are considered significant historic or artistic properties. <br><br>The use of the FILTER function with REGEX ensures that the search is case-insensitive and matches any variations of the specified phrase.</p>
+                        </div>
+                    </div>
+<!-- Image Container -->
+            <br><br>
+<p>The query retrieves distinct historic or artistic properties from the ARCO ontology whose labels contain the phrase "Ritratto di Federico II di Svevia". It returns the unique identifiers for these properties (?cp).
+The result of the query is the following IRI:<br> <a href="https://dati.beniculturali.it/lodview-arco/resource/HistoricOrArtisticProperty/0100035876.html" target="_blank">hhttps://dati.beniculturali.it/lodview-arco/resource/HistoricOrArtisticProperty/0100035876.html</a></p>
+<div class="image-container">
+                <img src="IRI Ritratto.jpg" alt="Iri Ritratto di Federico II di Svevia">
+                  <h2>New Triple</h2>
+                  <p>Since the resource of Frederick the II is not associated with any depiction, a new RDF Triple can be built:<br></p>
+<table border="1" cellpadding="10" cellspacing="0">
+    <tr>
+        <th>SUBJECT</th>
+        <th>PREDICATE</th>
+        <th>OBJECT</th>
+    </tr>
+    <tr>
+        <td>Federico II di Svevia</td>
+        <td>foaf:depiction</td>
+        <td>Ritratto di Federico II</td>
+    </tr>
+    <tr>
+        <td><a href="https://w3id.org/arco/resource/Agent/46dcc52443cd7818dc4c2adc90dee902" target="_blank">https://w3id.org/arco/resource/Agent/46dcc52443cd7818dc4c2adc90dee902</a></td>
+        <td><a href="http://xmlns.com/foaf/spec/" target="_blank">http://xmlns.com/foaf/spec/</a>
+        <td><a href="https://dati.beniculturali.it/lodview-arco/resource/HistoricOrArtisticProperty/0100035876.html" target="_blank">hhttps://dati.beniculturali.it/lodview-arco/resource/HistoricOrArtisticProperty/0100035876.html</a></td>
+    </tr>
+</table>   
+            </div>
+    </div>
+        </div>
+        <br><br>
+      <div class="right-box">
+    <div class="knight-icon-container">
+        <i class="fas fa-chess-rook knight-icon"></i> 
+        <!-- Icona del castello -->
+    </div>
+    <h2 style="text-align: center;">Architectural Assets</h2>
+    <p>The main class for this project is the Architectural or Landscape Heritage class. Therefore, queries were built to investigate whether "castello" exists as an asset in this class, and if the stile of Frederick's castles is listed in the dataset.<br></p>
+        <div class="query-container">
+    <h1>1</h1>
+    <p class="query-box"><strong>SELECT DISTINCT ?type<br>
+    WHERE {<br>
+    ?cp a arco:ArchitecturalOrLandscapeHeritage ; <br>dc:type ?type .<br>
+    }</strong></p>
+    <img src="Query castello.jpg" alt="Query castello" width="175" height="200">
+</div>
+<p>Emperor Frederick II left evidence of himself mainly in the castles. The “castello” asset is found among the entities existing in th KG, and therefore chosen as element of interest.</p>
+<br>
+<div class="query-container">
+    <h1>2</h1>
+    <p class="query-box"><strong>SELECT DISTINCT ?type<br>
+    WHERE {<br>
+    ?cp a arco:ArchitecturalOrLandscapeHeritage ; <br>dc:type ?type .<br>FILTER(CONTAINS(LCASE(?type), "castello"))<br>
+    }</strong></p>
+    <img src="Query castello-svevo.jpg" alt="Query castello-svevo" width="220" height="150">
+</div>
+<p>Since it is the most widespread architectural style in the Frederician era, the Swabian castle, “castello-svevo”, represents the core topic of the research.</p><br>
+<div class="query-container">
+    <h1>3</h1>
+    <p class="query-box"><strong>PREFIX arco: &lt;https://w3id.org/arco/ontology/arco/&gt; <br> PREFIX dc: &lt;http://purl.org/dc/elements/1.1/&gt; <br> PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; <br> SELECT ?type (COUNT(?cp) AS ?count) <br>WHERE {<br>
+?cp a arco:ArchitecturalOrLandscapeHeritage ; <br> dc:type ?type . <br>
+FILTER(CONTAINS(LCASE(?type), "castello")) <br>}<br>
+GROUP BY ?type <br>ORDER BY DESC(?count)</strong></p>
+    <img src="Query castello-svevo numero.jpg" alt="Query castello-svevo numero" width="200" height="65">
+</div>
+<p>Through this research, only two Swabian castles appear in the ArCo ontology. <br> <br> The following query is necessary to search for the Swabian castles located in the two regions of interest: Sicily and Apulia.</p>
+<div class="query-container">
+    <h1>4</h1>
+    <p class="query-box"><strong>SELECT (COUNT(?cp) AS ?numeroCastelli)<br> ?regionId (COUNT(?regionId) AS ?regionCount)<br>
+WHERE <br>
+{<br>
+  ?cp a arco:ArchitecturalOrLandscapeHeritage ;<br>
+      dc:type ?o ;<br>
+      arco:regionIdentifier ?regionId .<br>
+  FILTER(str(?o) = "castello-svevo")<br>
+}<br>
+GROUP BY ?regionId
+</strong></p>
+    <img src="query castello-svevo regioni.jpg" alt="Query castello-svevo regioni" width="350" height="120">
+</div>
+    <p>Surprisingly, the results of the  query reveal that the two Swabian castles in Italy are grouped by two region IDs, “16” and “19”, respectively Apulia and Sicily.</p>
+    <p>The next query is created to retrieve the two cultural properties' IRIs.</p>
+   <div class="query-container">
+    <h1>5</h1>
+    <p class="query-box"><strong>
+        PREFIX arco: &lt;https://w3id.org/arco/ontology/arco/&gt; <br> 
+        PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;<br> 
+        PREFIX dc: &lt;http://purl.org/dc/elements/1.1/&gt;  <br> <br>
+        SELECT DISTINCT ?cp ?label ?regionId <br>
+        WHERE {<br>
+          {<br>
+            ?cp a arco:ArchitecturalOrLandscapeHeritage ;<br>
+                dc:type ?type ;<br>
+                rdfs:label ?label ;<br>
+                arco:regionIdentifier ?regionId .<br>
+            FILTER(str(?type) = 'castello-svevo' && str(?regionId) = '16')<br>
+          }<br>
+          UNION<br>
+          {<br>
+            ?cp a arco:ArchitecturalOrLandscapeHeritage ;<br>
+                dc:type ?type ;<br>
+                rdfs:label ?label ;<br>
+                arco:regionIdentifier ?regionId .<br>
+            FILTER(str(?type) = 'castello-svevo' && str(?regionId) = '19')<br>
+          }<br>
+        }<br>
+        ORDER BY ?regionId
+    </strong></p>
+</div>
+<!-- Sezione a scomparsa 1 -->
+    <div class="collapsible-section">
+        <button class="collapsible">Explanation<i class="fas fa-chevron-down arrow"></i></button>
+        <div class="content">
+            <p>The core of the query involves selecting distinct instances (?cp) of heritage sites that are classified as ArchitecturalOrLandscapeHeritage according to the arco ontology. For these instances, the query retrieves the label (?label) and the region identifier (?regionId). The query applies a filter to find only those heritage sites that have a type (?type) matching "castello-svevo" and are located in regions with identifiers '16' or '19'. These regions correspond to specific areas in Italy, likely Apulia (Puglia) and Sicily. The UNION clause is used to combine the results from both regions, and the final results are ordered by the region identifier. This way, the query returns a list of "castello-svevo" heritage sites, sorted by their region, from the specified regions.<br></p>
+        </div>
+    </div>
+    <br>
+<img src="Query castello-svevo sicilia e puglia.jpg" alt="Query castello-svevo Sicilia e Puglia" width="700" height="150">
+<br>
+<ul>
+    <li><b>Castel del Monte</b> &#8594; <br>
+<a href="https://dati.beniculturali.it/lodview-arco/resource/ArchitecturalOrLandscapeHeritage/1600007230.html" target="_blank">https://dati.beniculturali.it/lodview-arco/resource/ArchitecturalOrLandscapeHeritage/1600007230.html</a><br><br>
+<img src="Castel del Monte.jpg" alt="Castel del Monte" width="700" height="500"><br></li>
+    <li><b>Castello di Augusta</b>&#8594; <br>
+<a href="https://dati.beniculturali.it/lodview-arco/resource/ArchitecturalOrLandscapeHeritage/1900261125-0.html" target="_blank">https://dati.beniculturali.it/lodview-arco/resource/ArchitecturalOrLandscapeHeritage/1900261125-0.html</a><br><br><img src="Castello di Augusta.jpg" alt="Castello di Augusta" width="700" height="500"><br></li>
+</ul>
+<p>In view of the fact that there are many more Swabian castles in Italy than the two reported in ArCo, the LLM Chat GPT is exploited to research for all the Swabian castles built in Southern Italy, more specifically in Sicily and Apulia, beating heart of Frederick’s reign.</p>
+<img src="List ChatGpt.jpg" alt="Lista Castelli in Sicilia e Puglia (ChatGPT)" width="750" height="375">
+<div class="container">
+    <!-- Sezione a scomparsa 1 -->
+    <div class="collapsible-section">
+        <button class="collapsible">Zero-shot prompting<i class="fas fa-chevron-down arrow"></i></button>
+        <div class="content">
+            <p>Zero-shot prompting involves asking a language model to perform a task without prior examples or specific training for that task. The model relies on its existing knowledge to generate a response. This approach allows the model to generalize and handle new tasks without needing extensive data or fine-tuning.</p>
+        </div>
+    </div>
+
+    <div class="text-content">
+        <p>The results show numerous others than listed in the ArCo ontology. Consequently, attempts will be made to establish whether these castles exist in the ontology, or if they are listed under a different dc:type.</p>
+    </div>
+</div>
+<p>A few attempts are made to retrieve other castles, by querying through the FILTER(REGEX) option and the name of the castles. <br>
+Many of them do not show results, e.g.</p>
+
+<div style="display: flex; gap: 20px;">
+    <div style="flex: 1; border: 1px solid #ddd; padding: 10px; background-color: #f9f9f9; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);">
+        <h2>1</h2>
+        <strong>PREFIX arco: &lt;https://w3id.org/arco/ontology/arco/&gt;<br>
+        PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;<br>
+        SELECT DISTINCT ?cp ?label<br>
+        WHERE {<br>
+          ?cp a arco:ArchitecturalOrLandscapeHeritage ;<br>
+              rdfs:label ?label .<br>
+          FILTER(REGEX(?label, "Castello Ursino", "i"))<br>
+        }</strong>
+    </div>
+
+    <div style="display: flex; gap: 20px;">
+    <div style="flex: 1; border: 1px solid #ddd; padding: 10px; background-color: #f9f9f9; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);">
+        <h2>2</h2>
+        <strong>PREFIX arco: &lt;https://w3id.org/arco/ontology/arco/&gt;<br>
+        PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;<br>
+        SELECT DISTINCT ?cp ?label<br>
+        WHERE {<br>
+          ?cp a arco:ArchitecturalOrLandscapeHeritage ;<br>
+              rdfs:label ?label .<br>
+          FILTER(REGEX(?label, "Castello di Brindisi", "i"))<br>
+        }</strong>
+    </div>
+</div>
+</div>
+<br>
+<p>ChatGPT is asked to find other names the castles can be listed under, thorugh the <b>Few-shot prompting technique</b>:
+</p>
+<!-- Sezione a scomparsa 1 -->
+    <div class="collapsible-section">
+        <button class="collapsible">Few-shot prompting<i class="fas fa-chevron-down arrow"></i></button>
+        <div class="content">
+            <p>Few-shot prompting is a technique where a language model is given a few examples of a task or query to help it understand and generate relevant responses. By providing one to ten examples, the model learns the format or nature of the task and uses this context to handle new, similar inputs. <br></p>
+        </div>
+    </div>
+    <br>
+<img src="Castello di Terra Chat GPT.jpg" alt="Castello di terra ChatGPT" width="700" height="325">
+<p>By modifying the FILTER(REGEX) of the previous queries, it is aimed to retrieve the Brindisi Castle, also known as “Castello di Terra”:
+</p>
+<div class="query-container">
+    <h1>6</h1>
+    <p class="query-box"><strong>PREFIX arco: &lt;https://w3id.org/arco/ontology/arco/&gt;<br>
+        PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;<br>
+        SELECT DISTINCT ?cp ?label<br>
+        WHERE {<br>
+          ?cp a arco:ArchitecturalOrLandscapeHeritage ;<br>
+              rdfs:label ?label .<br>
+          FILTER(REGEX(?label, "Castello di Terra", "i"))
+</strong></p>
+</div>
+    <img src="IRI castello di terra.jpg" alt="IRI castello" width="750" height="140">
+    <p>The result is the IRI <br><a href="https://dati.beniculturali.it/lodview-arco/resource/ArchitecturalOrLandscapeHeritage/1600314494.html" target="_blank">https://dati.beniculturali.it/lodview-arco/resource/ArchitecturalOrLandscapeHeritage/1600314494.html</a></p>
+    <p>The caste is not recognized as a Swabian castle. Some improvements are therefore suggested:</p>
+    <img src="Possible improvements.jpg" alt="Possible improvements" width="750" height="400">
+</div>
+<br> <br>
+ <div class="right-box">
+    <div class="knight-icon-container">
+        <i class="fas fa-crown knight-icon"></i> 
+        <!-- Icona della corona -->
+    </div>
+    <h2 style="text-align: center;">Enrichments</h2>
+<p>Through the project, it is now attempted to enrich the ArCo KG with new triples.</p>
+<p>The Brindsi Castle is not associated with the Layout class. Two different LLMs (Gemini and ChatGPT) are therefore used to inquire what plan the castle presents.</p>
+<!-- Container for the images with centered alignment -->
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+    <figure style="text-align: center; margin: 0;">
+        <img src="Pianta Castello di Brindisi ChatGPT.jpg" alt="Pianta Castello di Brindisi ChatGPT" style="max-width: 200px; height: auto;">
+    </figure>
+    <figure style="text-align: center; margin: 0;">
+        <img src="Pianta Castello di Brindisi Gemini.jpg" alt="Pianta Castello di Brindisi Gemini" style="max-width: 400px; height: auto;">
+    </figure>
+</div>
+<p>ChatGPT submits a partially incorrect piece of information, while Gemini provides a faithful answer, supported by the attached planimetry.</p>
+<p>In order to retrieve the “trapezoidale” asset in the Layout class of the construction-description ontology, the following query is built:</p>
+<div class="query-container">
+    <p class="query-box"><strong>PREFIX arco: &lt;https://w3id.org/arco/ontology/arco/&gt;<br>
+        PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;<br>
+        SELECT ?layout <br>
+        WHERE {<br>
+        ?layout rdf:type arco:Layout .<br>
+        FILTER(CONTAINS(STR(?layout), "trapezoidale"))<br>
+        }<br></strong></p>
+
+<!-- Sezione a scomparsa 1 -->
+    <div class="collapsible-section">
+        <button class="collapsible">Explanation<i class="fas fa-chevron-down arrow"></i></button>
+        <div class="content">
+            <p>The SELECT ?layout specifies that the query will return the ?layout variable, which represents the resources being queried. In the WHERE clause, the ?layout rdf:type arco:Layout condition filters for resources that are of type arco:Layout. Finally, the FILTER(CONTAINS(STR(?layout), "trapezoidale")) restricts the results to only those layouts whose URIs contain the word "trapezoidale".</p>
+        </div>
+        </div>
+    </div>
+<p>The retrieved IRI is <br><a href="https://dati.beniculturali.it/lodview-arco/resource/Layout/0500140076-asimmetrico-trapezoidale.html" target="_blank">https://dati.beniculturali.it/lodview-arco/resource/Layout/0500140076-asimmetrico-trapezoidale.html</a></p>
+<p>Hence, two new triples can be presented</p>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2nd and 3rd Triple</title>
+    <style>
+        /* Stile per rimuovere i bullet points */
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        /* Linee verticali tra nodi */
+        ul ul::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10px;
+            border-left: 1px solid #ccc;
+            height: 100%;
+        }
+
+        /* Stile per ogni nodo */
+        li {
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        /* Linee orizzontali tra nodi */
+        li::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 0;
+            width: 10px;
+            border-top: 1px solid #ccc;
+        }
+
+        /* Rimuovere la linea verticale per l'ultimo nodo */
+        li:last-child::before {
+            border-left: 1px solid transparent;
+        }
+    </style>
+</head>
+<body>
+<h2>2nd and 3rd Triple</h2>
+<ul>
+    <ul>
+        <li><b>[SUBJECT]</b> <a href="https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/1600314494"
+               target="_blank" style="color: inherit; text-decoration: underline;">Castello di Brindisi</a></li>
+        <ul>
+            <li><b>[PREDICATE]</b><a href="https://w3id.org/arco/ontology/construction-description/hasLayout"
+                   target="_blank" style="color: inherit; text-decoration: underline;">a-cd: hasLayout</a></li>
+            <ul>
+                <li><b>[OBJECT]</b> <a href="https://w3id.org/arco/resource/Layout/0500140076-asimmetrico-trapezoidale"
+                       target="_blank" style="color: inherit; text-decoration: underline;">Asimmetrico Trapezoidale</a></li>
+            </ul>
+        </ul>
+        <br>
+        <li><b>[SUBJECT]</b> <a href="https://w3id.org/arco/resource/Layout/0500140076-asimmetrico-trapezoidale"
+               target="_blank" style="color: inherit; text-decoration: underline;">Asimmetrico Trapezoidale</a></li>
+        <ul>
+            <li><b>[PREDICATE]</b> <a href="https://w3id.org/arco/ontology/construction-description/isLayoutOf"
+                   target="_blank" style="color: inherit; text-decoration: underline;">a-cd: isLayoutOf</a></li>
+            <ul>
+                <li><b>[OBJECT]</b> <a href="https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/1600314494"
+                       target="_blank" style="color: inherit; text-decoration: underline;">Castello di Brindisi</a></li>
+            </ul>
+        </ul>
+    </ul>
+</ul>
+</body>
+</html>
+<br>
+<p> The LLama LLM is now employed through zero-shot prompting technique in order to establish the main construction elements of the Augusta Castle, the main focus of this segment. Results indicate the “tower” as the first listed element.</p>
+<img src="construction elements Augusta Llama.jpg" alt="construction elements Augusta Llama" style="max-width: 500px; height: auto;">
+<p>In order to associate the latter to the Castle, two properties are selected, namely a-con:hasConstructionElement and a-con:isConstructionElementOf. <br>Therefore a new query is built in order to retrieve the “tower” asset in the Construction Element class.</p>
+<div class="query-container">
+    <p class="query-box"><strong>PREFIX arco: &lt;https://w3id.org/arco/ontology/arco/&gt;<br>
+        PREFIX rdf: <
+        &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#>&gt; <br>
+        PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;<br><br>
+        SELECT ?asset ?label<br>
+        WHERE {<br>
+           ?asset rdf:type arco:ConstructionElement .<br>
+              ?asset rdfs:label ?label .<br>
+           FILTER(CONTAINS(LCASE(?label), "torre"))<br>
+       }
+</strong></p>
+<!-- Sezione a scomparsa 1 -->
+    <div class="collapsible-section">
+        <button class="collapsible">Explanation<i class="fas fa-chevron-down arrow"></i></button>
+        <div class="content">
+            <p>This SPARQL query selects assets that are construction elements along with their corresponding labels. It searches for labels containing the word "torre," regardless of case. The query returns the matching assets and their associated labels.</p>
+        </div>
+        </div>
+</div>
+<p>The retrieved IRI is <br><a href="https://w3id.org/arco/resource/Veneto/ConstructionElement/CRV-PG_0000006-torre " target="_blank">https://w3id.org/arco/resource/Veneto/ConstructionElement/CRV-PG_0000006-torre </a></p>
+<p>It is now possible to build a new pair of triples.</p>
+<h2>4th and 5th Triple</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adjusted Table</title>
+</head>
+<body>
+    <div style="width: 90%; overflow-x: auto; margin: 0 auto;"> <!-- Riduci la larghezza del contenitore della tabella -->
+        <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; max-width: 600px;"> <!-- Imposta una larghezza massima per la tabella -->
+            <tr>
+                <th>SUBJECT</th>
+                <th>PREDICATE</th>
+                <th>OBJECT</th>
+            </tr>
+            <tr>
+                <td><b>Castello di Augusta</b><br><a href="https://dati.beniculturali.it/lodview-arco/resource/ArchitecturalOrLandscapeHeritage/1900261125-0.html" target="_blank">https://dati.beniculturali.it/lodview-arco/resource/ArchitecturalOrLandscapeHeritage/1900261125-0.html</a></td>
+                <td><b>a-con:hasConstructionElement</b><br><a href="https://w3id.org/arco/ontology/construction-description/hasConstructionElement" target="_blank">https://w3id.org/arco/ontology/construction-description/hasConstructionElement</a></td>
+                <td><b>Torre</b><br><a href="https://dati.beniculturali.it/lodview-arco/resource/Veneto/ConstructionElement/CRV-PG_0000006-torre.html" target="_blank">https://dati.beniculturali.it/lodview-arco/resource/Veneto/ConstructionElement/CRV-PG_0000006-torre.html</a></td>
+            </tr>
+            <tr>
+                <td><b>Torre</b><br><a href="https://dati.beniculturali.it/lodview-arco/resource/Veneto/ConstructionElement/CRV-PG_0000006-torre.html" target="_blank">https://dati.beniculturali.it/lodview-arco/resource/Veneto/ConstructionElement/CRV-PG_0000006-torre.html</a></td>
+                <td><b>a-con:isConstructionElementOf</b><br><a href="https://w3id.org/arco/ontology/construction-description/isConstructionElementOf" target="_blank">https://w3id.org/arco/ontology/construction-description/isConstructionElementOf</a></td>
+                <td><b>Castello di Augusta</b><br><a href="https://dati.beniculturali.it/lodview-arco/resource/ArchitecturalOrLandscapeHeritage/1900261125-0.html" target="_blank">https://dati.beniculturali.it/lodview-arco/resource/ArchitecturalOrLandscapeHeritage/1900261125-0.html</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+
+<p>The three chosen Castles in the Arco KG are not yet correlated with their commissioner, Frederick II.</p>
+<p>Employing the Multimodal Chain-of-Thought technique, ChatGPT is involved with the aim of identifying the common commissioner.</p>
+<div style="display: flex; align-items: flex-start;">
+    <img src="ChatGPT Commissioner.jpg" alt="ChatGPT Commissioner" style="max-width: 250px; height: auto; margin-right: 20px;">
+    <p>A review of the Context-description ontology identifies two object properties, that are a-cd:isCommittentIn and a-cd:hasCommittent, useful to link the three Architectural Heritage entities with their Agent in new sets of triples.</p>
+</div>
+<h2>6yh and 7th Triple</h2>
+<img src="6th and 7th triple.jpg" alt="6th and 7th triple" style="max-width: 750px;">
+<p>To discover the potential cultural events within the ArCo KG, a SPARQL query is constructed to search for assets belonging to the class EventOrSituationInTime, that can eventually be associated with the architectural entities. </p>
+<div class="query-container">
+    <p class="query-box"><strong>PREFIX arco: &lt;https://w3id.org/arco/ontology/arco/&gt;<br>
+        PREFIX rdf: <
+        &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#>&gt; <br>
+        PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;<br><br>
+        SELECT ?event ?label ?description<br>
+        WHERE {<br>
+           ?event rdf:type arco:EventOrSituationInTime .<br>
+               OPTIONAL { ?event rdfs:label ?label . }<br>
+           OPTIONAL { ?event arco:description ?description . }<br>
+       }
+</strong></p>
+<!-- Sezione a scomparsa 1 -->
+    <div class="collapsible-section">
+        <button class="collapsible">Explanation<i class="fas fa-chevron-down arrow"></i></button>
+        <div class="content">
+            <p>This SPARQL query retrieves information about events or situations in time. Specifically, it selects events that are classified as EventOrSituationInTime and optionally includes their labels and descriptions if they are available. The query returns the event along with its corresponding label and description, if present.</p>
+        </div>
+        </div>
+</div>
+<p>The results identify "visita del castello" as one of the existing entities.</p>
+<img src="Visita del Castello.jpg" alt="Visita del Castello IRI" style="max-width: 700px">
+<p>To determine if a (guided) visit can be classified as a cultural event specific to a castle, three different LLMs, namely ChatGPT, LLama and Gemini, are used for verification.</p>
+<img src="Visita LLMs.jpg" alt="Visita LLMs" style="max-width: 700px">
+<p>The response from Gemini is initially negative. However, when asked for an explanation, the LLM revises its assessment and confirms that the visit can indeed be considered a potential event associated with the castle.</p>
+<p>Once confirmed, the 3 LLMs are now employed to verify whether the (guided) visit specifically pertains to Castel Del Monte. The responses are consistent, particularly in listing order: all of them place the "tour of the castle" in the first position.</p>
+<img src="attività castel del monte.jpg" alt="Attività Castel del Monte" style="max-width: 450px;">
+<p>A research to find the most suitable property of the ArCo core ontology, in order to connect the castle to the event, is made.<br>The results can be found in the Core Ontology:</p>
+<div class="image-container">
+        <img src="Involves.jpg" alt="Involves" style="max-width: 390px;">
+        <img src="Is involved in.jpg" alt="Is Involved In" style="max-width: 376px;">
+    </div>
+    <p>Combining the obtained pieces of information, two new triples are constructed in order to associate Castel Del Monte with its main activity and vice versa.</p>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .custom-table th, .custom-table td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        .custom-table th {
+            background-color: #f4f4f4;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .subject-cell, .predicate-cell, .object-cell {
+            background-color: #fff8d2;
+            font-weight: bold;
+            text-align: center;
+            vertical-align: middle;
+            width: 15%; /* Adjust width as necessary */
+        }
+        .content-cell {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <table class="custom-table">
+        <tr>
+            <th class="subject-cell">SUBJECT</th>
+            <td class="content-cell">
+                <strong>Castel del Monte</strong><br>
+                <a href="https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/1600007230">https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/1600007230</a>
+            </td>
+            <td class="content-cell">
+                <strong>Visita del Castello</strong><br>
+                <a href="https://w3id.org/arco/resource/Event/eve-s56-rsef18b">https://w3id.org/arco/resource/Event/eve-s56-rsef18b</a>
+            </td>
+        </tr>
+        <tr>
+            <th class="predicate-cell">PREDICATE</th>
+            <td class="content-cell">
+                <strong>arco-core:Involves</strong><br>
+                <a href="https://w3id.org/arco/ontology/core/involves">https://w3id.org/arco/ontology/core/involves</a>
+            </td>
+            <td class="content-cell">
+                <strong>arco-core:isInvolvedIn</strong><br>
+                <a href="https://w3id.org/arco/ontology/core/isInvolvedIn">https://w3id.org/arco/ontology/core/isInvolvedIn</a>
+            </td>
+        </tr>
+        <tr>
+            <th class="object-cell">OBJECT</th>
+            <td class="content-cell">
+                <strong>Visita del Castello</strong><br>
+                <a href="https://w3id.org/arco/resource/Event/eve-s56-rsef18b">https://w3id.org/arco/resource/Event/eve-s56-rsef18b</a>
+            </td>
+            <td class="content-cell">
+                <strong>Castel del Monte</strong><br>
+                <a href="https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/1600007230">https://w3id.org/arco/resource/ArchitecturalOrLandscapeHeritage/1600007230</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+
+</div>
+</div>
+</div>   
+    </main>
+    <footer>
+        <p></p>
+    </footer>
+    <div class="footer">
+        <p>The Process | Giorgia Aquilia and Antonella Galasso</p>
+        <br>
+       <p>Click the link below to download the PDF file of the project:</p>
+        <!-- Link for downloading the PDF without default link styles -->
+        <a href="ITS Project - Aquilia, Galasso.pdf" download class="download-link"><i class="fas fa-download"></i> ITS Project - Aquilia, Galasso PDF</a>
+    </div>
+
+    <!-- Script per la sezione a scomparsa -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var coll = document.getElementsByClassName("collapsible");
+            for (var i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    var arrow = this.getElementsByClassName("arrow")[0];
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                        arrow.style.transform = "rotate(0deg)";
+                    } else {
+                        content.style.display = "block";
+                        arrow.style.transform = "rotate(180deg)";
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
